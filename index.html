@@ -18,7 +18,8 @@
     <section id="how">
       <h1>How it works</h1>
       <div id="tour"></div>
-      <button id="try-btn" class="primary wide">Try it yourself</button>
+      <!-- Hidden while the walkthrough is shown to the team. Remove "hidden" to bring the demo back. -->
+      <button id="try-btn" class="primary wide" hidden>Try it yourself</button>
     </section>
 
     <section id="scan" hidden>
@@ -36,7 +37,7 @@
 
       <label for="stage">Stage</label>
       <select id="stage">
-        <option value="calving">Calving</option>
+        <option value="calving">Pre-calving</option>
         <option value="breeding" selected>Breeding</option>
         <option value="dryoff">Dry-off</option>
       </select>

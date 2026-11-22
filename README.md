@@ -2,8 +2,8 @@
 
 A student prototype from Team 5, MSc AgInnovate, University of Galway.
 
-It shows what scanning a cow for Body Condition Score (BCS) could look like on a
-breeding visit. **Every result is sample data.** Nothing looks at the photo yet,
+It shows what scanning a cow for Body Condition Score (BCS) could look like when a
+farmer does their own milk recording. **Every result is sample data.** Nothing looks at the photo yet,
 and no score here is a real measurement.
 
 ## See it

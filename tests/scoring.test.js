@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { TARGETS_CHECKED } from '../targets.js';
-import { adjustScore, compareToTarget, pickSampleResult, formatScore } from '../scoring.js';
+import { TARGETS_CHECKED, TARGETS } from '../targets.js';
+import { adjustScore, compareToTarget, pickSampleResult, formatScore, BODY_AREAS } from '../scoring.js';
 
 test('adjust clamps at the ends', () => {
   assert.equal(adjustScore(1.0, -0.25), 1.0);
@@ -9,18 +9,30 @@ test('adjust clamps at the ends', () => {
   assert.equal(adjustScore(2.75, 0.25), 3.0);
 });
 
-test('compare to target', () => {
+test('compare to target (Teagasc bands)', () => {
   assert.equal(compareToTarget(2.5, 'breeding'), 'under');
   assert.equal(compareToTarget(2.75, 'breeding'), 'in'); // ends count as in
-  assert.equal(compareToTarget(3.75, 'breeding'), 'over');
-  assert.equal(compareToTarget(3.0, 'dryoff'), 'none'); // no target set
+  assert.equal(compareToTarget(3.5, 'breeding'), 'over'); // breeding tops out at 3.25
+  assert.equal(compareToTarget(3.0, 'dryoff'), 'in');
+  assert.equal(compareToTarget(2.75, 'calving'), 'under'); // pre-calving starts at 3.0
+});
+
+test('targets follow the Teagasc BCS sheet', () => {
+  assert.deepEqual(
+    Object.fromEntries(Object.entries(TARGETS).map(([k, t]) => [k, [t.min, t.max]])),
+    { calving: [3.0, 3.5], breeding: [2.75, 3.25], dryoff: [2.75, 3.25] },
+  );
+});
+
+test('body areas are the three Teagasc ones', () => {
+  assert.deepEqual(BODY_AREAS, ['Pins and tailhead', 'Loin (short ribs)', 'Ribs']);
 });
 
 test('sample results cycle and stay in quarter points', () => {
   for (let n = 0; n < 12; n++) {
     const r = pickSampleResult(n);
     assert.equal((r.score * 4) % 1, 0);
-    assert.equal(r.areas.length, 5);
+    assert.equal(r.areas.length, 3);
   }
   assert.notEqual(pickSampleResult(0).score, pickSampleResult(1).score);
 });
