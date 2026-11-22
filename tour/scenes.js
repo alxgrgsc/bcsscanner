@@ -65,7 +65,7 @@ export const SCENES = [
           const hit = TYPED.find(([d]) => d === String(k));
           return hit ? `<span class="t-press" style="--d:${hit[1]}s">${k}</span>` : `<span>${k}</span>`;
         }).join('')}</div>`, 't-phone-high')}
-      ${note('The farmer types her number for the milk record while milking, as now.', 't-fade-in')}`,
+      ${note('The farmer types her number for the milk record.', 't-fade-in')}`,
   },
   {
     caption: '4. Take the photo',
