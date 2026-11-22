@@ -1,5 +1,6 @@
 import { TARGETS, TARGETS_CHECKED } from './targets.js';
 import { pickSampleResult, adjustScore, compareToTarget, formatScore, resultLabel } from './scoring.js';
+import { mountTour } from './tour/tour.js';
 
 const $ = (id) => document.getElementById(id);
 
@@ -82,7 +83,7 @@ function score() {
     $('scan').hidden = true;
     $('result').hidden = false;
     showResult(resultLabel('new'));
-    window.scrollTo(0, 0);
+    $('result').scrollIntoView({ block: 'start' });
   }, 1000);
 }
 
@@ -95,13 +96,24 @@ function nextCow() {
   $('tag').value = '';
   $('result').hidden = true;
   $('scan').hidden = false;
-  window.scrollTo(0, 0);
+  $('scan').scrollIntoView({ block: 'start' });
 }
+
+// The camera only starts when someone chooses to try it, so opening the
+// page (e.g. at a team presentation) asks for nothing.
+function tryIt() {
+  tour.pause();
+  $('try-btn').hidden = true;
+  $('scan').hidden = false;
+  $('scan').scrollIntoView({ block: 'start' });
+  startCamera();
+}
+
+const tour = mountTour($('tour'));
 
 $('score-btn').addEventListener('click', score);
 $('minus-btn').addEventListener('click', () => adjust(-0.25));
 $('plus-btn').addEventListener('click', () => adjust(0.25));
 $('agree-btn').addEventListener('click', () => showResult(resultLabel('agreed')));
 $('next-btn').addEventListener('click', nextCow);
-
-startCamera();
+$('try-btn').addEventListener('click', tryIt);
