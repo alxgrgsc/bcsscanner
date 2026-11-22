@@ -50,3 +50,17 @@ test('any scene showing a score also says Estimate', () => {
     }
   }
 });
+
+test('scene 3 types 2034: each digit appears when its key is pressed, then ✓', () => {
+  const html = SCENES[2].html;
+  const digits = [...html.matchAll(/class="t-digit" style="--d:([\d.]+)s">(\d)</g)].map((m) => [m[2], m[1]]);
+  const keys = [...html.matchAll(/class="t-press" style="--d:([\d.]+)s">([\d✓])</g)].map((m) => [m[2], m[1]]);
+  assert.deepEqual(digits.map((d) => d[0]).join(''), '2034');
+  const delays = digits.map((d) => Number(d[1]));
+  assert.deepEqual([...delays].sort((a, b) => a - b), delays); // left to right
+  for (const [digit, delay] of digits) {
+    assert.ok(keys.some(([k, d]) => k === digit && d === delay), `key ${digit} pressed at ${delay}s`);
+  }
+  const tick = keys.find(([k]) => k === '✓');
+  assert.ok(tick && Number(tick[1]) > Math.max(...delays), '✓ pressed last');
+});

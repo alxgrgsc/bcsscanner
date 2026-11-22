@@ -220,7 +220,12 @@
 }
 .t-clip::after { content: ''; position: absolute; left: 50%; bottom: 12%; width: 30%; aspect-ratio: 1; transform: translateX(-50%); border-radius: 50%; background: var(--t-olive); }
 
-.t-type { font-size: 28px; letter-spacing: 2px; animation: t-in 0.3s 0.6s both; }
+.t-input { display: flex; align-items: center; min-height: 44px; margin: 6px 0 4px; padding: 0 10px; border: 2px solid var(--t-sand); border-radius: 8px; background: #fff; font-size: 26px; font-weight: 600; letter-spacing: 2px; }
+.t-digit { animation: t-in 0.05s var(--d) both; }
+.t-caret { width: 2px; height: 26px; margin-left: 2px; background: var(--t-brown); animation: t-blink 0.8s steps(1) infinite; }
+.t-press { animation: t-press 0.25s var(--d) both; }
+@keyframes t-blink { 50% { opacity: 0; } }
+@keyframes t-press { 0% { background: var(--t-card); transform: none; } 40% { background: var(--t-rust); color: var(--t-cream); transform: scale(0.9); } 100% { background: var(--t-card); transform: none; } }
 .t-keys { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 8px; }
 .t-keys span { text-align: center; padding: 6px 0; border-radius: 6px; background: var(--t-card); font-weight: 600; font-size: 13px; min-height: 28px; }
 .t-keys span:last-child { background: var(--t-olive); color: var(--t-cream); }
@@ -232,3 +237,5 @@
 .t-herd span.t-flagged { animation-name: t-fill-flag; }
 @keyframes t-fill-flag { from { background: var(--t-sand); transform: scale(0.8); } to { background: var(--t-rust); transform: none; } }
 
+.t-keys span.t-press:last-child { animation-name: t-press-ok; }
+@keyframes t-press-ok { 0%, 100% { background: var(--t-olive); color: var(--t-cream); transform: none; } 40% { background: var(--t-rust); transform: scale(0.9); } }

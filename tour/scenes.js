@@ -25,6 +25,10 @@ const phone = (inner, cls = '') =>
 
 const note = (text, cls = '') => `<p class="t-note ${cls}">${text}</p>`;
 
+// Scene 3: the cow number is typed key by key. [key, seconds into the scene]
+const TYPED = [['2', 0.6], ['0', 1.0], ['3', 1.4], ['4', 1.8], ['✓', 2.4]];
+const KEYPAD = [1, 2, 3, 4, 5, 6, 7, 8, 9, '', 0, '✓'];
+
 const area = (name, score, cls = '') =>
   `<li class="${cls}"><span>${name}</span><b>${score}</b></li>`;
 
@@ -56,8 +60,11 @@ export const SCENES = [
     html: `
       ${phone(`
         <p class="t-small">Milk recording · cow number</p>
-        <p class="t-big t-type">2034</p>
-        <div class="t-keys">${[1, 2, 3, 4, 5, 6, 7, 8, 9, '', 0, '✓'].map((k) => `<span>${k}</span>`).join('')}</div>`, 't-phone-high')}
+        <div class="t-input">${TYPED.filter(([d]) => d !== '✓').map(([d, s]) => `<span class="t-digit" style="--d:${s}s">${d}</span>`).join('')}<span class="t-caret"></span></div>
+        <div class="t-keys">${KEYPAD.map((k) => {
+          const hit = TYPED.find(([d]) => d === String(k));
+          return hit ? `<span class="t-press" style="--d:${hit[1]}s">${k}</span>` : `<span>${k}</span>`;
+        }).join('')}</div>`, 't-phone-high')}
       ${note('The farmer types her number for the milk record while milking, as now.', 't-fade-in')}`,
   },
   {
