@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400">
+  <!-- Simple drawing of a cow seen from behind, standing in a crush -->
+  <rect width="300" height="400" fill="#5b4a3c"/>
+  <rect y="300" width="300" height="100" fill="#4a3d31"/>
+  <path d="M40 90 Q150 50 260 90 L265 120 Q255 200 225 250 L215 380 L190 380 L185 270 L115 270 L110 380 L85 380 L75 250 Q45 200 35 120 Z" fill="#2b2420"/>
+  <path d="M70 110 Q150 85 230 110 L228 170 Q150 150 72 170 Z" fill="#f3efe6"/>
+  <path d="M150 120 L150 290" stroke="#1b1613" stroke-width="10" stroke-linecap="round"/>
+  <rect x="20" y="40" width="12" height="360" fill="#8a8a8a"/>
+  <rect x="268" y="40" width="12" height="360" fill="#8a8a8a"/>
+</svg>

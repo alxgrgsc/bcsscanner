@@ -82,11 +82,11 @@ test('format', () => { assert.equal(formatScore(3), '3.00'); });
 test('targets not yet checked', () => { assert.equal(TARGETS_CHECKED, false); });
 ```
 
-- [ ] **Step 3: Run, expect FAIL** — `node --test tests/` → fails, modules missing.
+- [ ] **Step 3: Run, expect FAIL** — `node --test` → fails, modules missing.
 
 - [ ] **Step 4: Write `targets.js` and `scoring.js`** to the Interfaces above. `targets.js` opens with a plain comment for Nóra/Emma: what each number means, where it came from (training videos, handoff 22 Nov 2026), and "set TARGETS_CHECKED to true once checked".
 
-- [ ] **Step 5: Run, expect PASS** — `node --test tests/` → 5 passing.
+- [ ] **Step 5: Run, expect PASS** — `node --test` → 5 passing.
 
 - [ ] **Step 6: README + .gitignore.** README: what this is (student prototype, sample data, Team 5 MSc AgInnovate, University of Galway), how to view (the Pages link; locally `python -m http.server 8000` then `http://localhost:8000`, not double-click), how to run tests, where to fix targets, "Built with Claude (Anthropic)". `.gitignore`: `.DS_Store`, `Thumbs.db`, `node_modules/`.
 
@@ -120,13 +120,13 @@ test('targets not yet checked', () => { assert.equal(TARGETS_CHECKED, false); })
 
 Run: `python -m http.server 8000` in the repo, open `http://localhost:8000` at phone width (390 px).
 Expected, every one true:
-- the strip is visible on both views; no "BóScan" anywhere (`grep -ri boscan --exclude-dir=docs .` returns nothing)
+- the strip is visible on both views; no "BóScan" anywhere (the `b.scan` test in tests/scoring.test.js passes)
 - with camera denied: sample cow shows, Score works
 - Score with no tag → "Tag: not entered"
 - five Scores in a row show different results
 - − at 1.00 stays 1.00; + at 5.00 stays 5.00
 - Dry-off → "No target set yet"; "Targets under review" shows
-- `node --test tests/` still passes
+- `node --test` still passes
 
 - [ ] **Step 5: Commit** — `git add -A && git commit -m "feat: Scan and Result views with sample results"`
 

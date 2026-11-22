@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BCS Scanner prototype</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header class="strip">BCS Scanner · Prototype · sample data</header>
+
+  <main>
+    <section id="scan">
+      <div class="frame">
+        <video id="camera" playsinline muted autoplay hidden></video>
+        <img id="sample-cow" src="assets/sample-cow.svg" alt="Drawing of a cow seen from behind">
+        <img class="outline" src="assets/cow-outline.svg" alt="">
+        <div class="scanline" hidden></div>
+      </div>
+      <p id="camera-note" class="note" hidden>Camera not available, using a sample cow</p>
+      <p class="note">Stand behind the cow and line her hips up with the outline.</p>
+
+      <label for="tag">Tag number</label>
+      <input id="tag" type="text" inputmode="numeric" placeholder="Tag number" autocomplete="off">
+
+      <label for="stage">Stage</label>
+      <select id="stage">
+        <option value="calving">Calving</option>
+        <option value="breeding" selected>Breeding</option>
+        <option value="dryoff">Dry-off</option>
+      </select>
+
+      <button id="score-btn" class="primary">Score</button>
+    </section>
+
+    <section id="result" hidden>
+      <p id="result-tag" class="tag-line"></p>
+      <div class="score-box">
+        <span id="result-score" class="score"></span>
+        <span id="result-label" class="label">Estimate</span>
+      </div>
+      <p id="result-target" class="target"></p>
+      <p id="targets-review" class="note" hidden>Targets under review</p>
+
+      <h2>By body area</h2>
+      <ul id="result-areas" class="areas"></ul>
+
+      <div class="row">
+        <button id="minus-btn" class="secondary" aria-label="Lower by a quarter point">−</button>
+        <button id="agree-btn" class="primary">Agree</button>
+        <button id="plus-btn" class="secondary" aria-label="Raise by a quarter point">+</button>
+      </div>
+      <p class="note">You have the final say. Use − and + to adjust.</p>
+
+      <button id="next-btn" class="secondary wide">Scan next cow</button>
+    </section>
+  </main>
+</body>
+</html>
