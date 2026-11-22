@@ -23,7 +23,7 @@ test('ten scenes with the agreed captions', () => {
     '1. Milk recording day',
     '2. Set up in the parlour',
     '3. Cow comes in',
-    '4. The photo takes itself',
+    '4. Take the photo',
     '5. Scan',
     '6. Estimate',
     '7. Next cows',

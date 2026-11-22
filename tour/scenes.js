@@ -68,7 +68,7 @@ export const SCENES = [
       ${note('The farmer types her number for the milk record while milking, as now.', 't-fade-in')}`,
   },
   {
-    caption: '4. The photo takes itself',
+    caption: '4. Take the photo',
     html: `
       ${phone(`<div class="t-view">${COW}<div class="t-align">${OUTLINE}</div><div class="t-flash"></div></div>`, 't-phone-tall')}
       ${note('Entering the number takes the photo.', 't-fade-in')}`,
