@@ -71,7 +71,7 @@ export const SCENES = [
     caption: '4. The photo takes itself',
     html: `
       ${phone(`<div class="t-view">${COW}<div class="t-align">${OUTLINE}</div><div class="t-flash"></div></div>`, 't-phone-tall')}
-      ${note('Entering the number takes the photo. No extra step.', 't-fade-in')}`,
+      ${note('Entering the number takes the photo.', 't-fade-in')}`,
   },
   {
     caption: '5. Scan',
