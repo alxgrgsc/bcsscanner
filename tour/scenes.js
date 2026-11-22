@@ -120,7 +120,8 @@ export const SCENES = [
         <li><span>Above target</span><i style="--w:7%" class="t-bar-over"></i><b>8</b></li>
       </ul>
       <p class="t-small">Cows to watch: 2034, 1187, 0921, 1450 …</p>
-      <p class="t-sent t-pop">Added to the milk recording report ✓</p>`, 't-phone-tall'),
+      <p class="t-sent t-pop">Added to the milk recording report ✓</p>
+      <p class="t-sent t-pop" style="animation-delay:2.2s">Report emailed ✅</p>`, 't-phone-tall'),
   },
   {
     caption: '10. Over the season',
