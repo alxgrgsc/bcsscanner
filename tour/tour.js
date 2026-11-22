@@ -13,9 +13,9 @@ export function mountTour(el, { sceneMs = 4000 } = {}) {
     <div class="t-stage" aria-live="polite"></div>
     <p class="t-caption"></p>
     <div class="t-controls">
-      <button type="button" class="t-btn" data-act="prev" aria-label="Previous step">◀</button>
+      <button type="button" class="t-btn" data-act="prev" aria-label="Previous step">◀&#xFE0E;</button>
       <button type="button" class="t-btn" data-act="pause" aria-label="Pause">❚❚</button>
-      <button type="button" class="t-btn" data-act="next" aria-label="Next step">▶</button>
+      <button type="button" class="t-btn" data-act="next" aria-label="Next step">▶&#xFE0E;</button>
     </div>
     <div class="t-dots">
       ${SCENES.map((s, i) => `<button type="button" data-go="${i}" aria-label="${s.caption}"></button>`).join('')}

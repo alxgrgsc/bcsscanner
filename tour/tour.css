@@ -1,5 +1,7 @@
 /* "How it works" walkthrough. Self-contained so the landing page can reuse it. */
 
+.t-wrap, .t-wrap *, .t-wrap *::before, .t-wrap *::after { box-sizing: border-box; }
+
 .t-wrap {
   --t-oat: #E8DCC4;
   --t-rust: #A44A2A;
@@ -33,6 +35,7 @@
 .t-btn {
   min-width: 64px;
   min-height: 48px;
+  padding: 0 14px;
   font: inherit;
   font-weight: 600;
   border-radius: 10px;

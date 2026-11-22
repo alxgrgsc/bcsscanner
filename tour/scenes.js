@@ -36,7 +36,7 @@ export const SCENES = [
       <div class="t-shed"></div>
       ${phone(`
         <p class="t-small">Today's visit</p>
-        <p class="t-big">Murphy's, Ballyroe</p>
+        <p class="t-big">Maguire's, Co. Cork</p>
         <p>18 cows due for breeding</p>
         <ul class="t-tags">
           <li>IE 372 0451 2034</li>
@@ -48,8 +48,7 @@ export const SCENES = [
     caption: '2. Cow held for breeding',
     html: `
       <div class="t-shed-bg"></div>
-      ${COW}
-      ${note('She is held still for breeding. The technician is already standing behind her.', 't-fade-in')}`,
+      ${COW}`,
   },
   {
     caption: '3. Identify the cow',
@@ -98,7 +97,7 @@ export const SCENES = [
           <div class="t-new">2.75 <span class="t-lbl">Estimate · adjusted by you</span></div>
         </div>
         <p class="t-small">The technician has the final say.</p>`)}
-      ${note('She feels the pins and tailhead, then nudges the score up a quarter.', 't-fade-in')}`,
+      ${note('The technician checks the pins and tailhead by hand and moves the score up a quarter point.', 't-fade-in')}`,
   },
   {
     caption: '8. Next cow',
@@ -111,7 +110,7 @@ export const SCENES = [
   {
     caption: '9. Farm report',
     html: phone(`
-      <p class="t-small">Murphy's, Ballyroe · sample</p>
+      <p class="t-small">Maguire's, Co. Cork · sample</p>
       <p class="t-big">18 cows scored</p>
       <ul class="t-bars">
         <li><span>Below target</span><i style="--w:22%" class="t-bar-under"></i><b>4</b></li>
@@ -128,11 +127,11 @@ export const SCENES = [
         <div class="t-laptop-screen">
           <p class="t-small">This week · all technicians · sample</p>
           <ul class="t-bars">
-            <li><span>Seán</span><i style="--w:90%" class="t-bar-in"></i><b>260 cows</b></li>
-            <li><span>Aoife</span><i style="--w:80%" class="t-bar-in"></i><b>231 cows</b></li>
-            <li><span>Pádraig</span><i style="--w:58%" class="t-bar-in"></i><b>168 cows</b></li>
+            <li><span>Johnny</span><i style="--w:90%" class="t-bar-in"></i><b>260 cows</b></li>
+            <li><span>Stephen</span><i style="--w:80%" class="t-bar-in"></i><b>231 cows</b></li>
+            <li><span>Padraic</span><i style="--w:58%" class="t-bar-in"></i><b>168 cows</b></li>
           </ul>
-          <p class="t-under">Farms with the most cows below target: Murphy's, Kelly's, Doyle's</p>
+          <p class="t-under">Farms with the most cows below target: Maguire's, Kelly's, Doyle's</p>
         </div>
       </div>
       ${note('The MD sees every visit, across every technician.', 't-fade-in')}`,
