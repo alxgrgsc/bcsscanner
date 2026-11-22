@@ -20,17 +20,28 @@ test('goTo ignores out-of-range', () => {
 
 test('ten scenes with the agreed captions', () => {
   assert.deepEqual(SCENES.map((s) => s.caption), [
-    '1. Arrive at the farm',
-    '2. Cow held for breeding',
-    '3. Identify the cow',
-    '4. Line up the outline',
+    '1. Arrive for milk recording',
+    '2. Set up in the parlour',
+    '3. Cow comes in',
+    '4. The photo takes itself',
     '5. Scan',
     '6. Estimate',
-    '7. Check by hand',
-    '8. Next cow',
+    '7. Next cows',
+    '8. Check the flagged cows',
     '9. Farm report',
     '10. Back at the office',
   ]);
+});
+
+test('the walkthrough shows a milk recording visit, not a breeding one', () => {
+  const all = SCENES.map((s) => s.html).join(' ');
+  assert.doesNotMatch(all, /due for breeding|held still for breeding|stick reader/i);
+});
+
+test('DIY recording is covered where it differs', () => {
+  for (const i of [1, 2, 7]) {
+    assert.match(SCENES[i].html, /DIY recording/, SCENES[i].caption);
+  }
 });
 
 test('any scene showing a score also says Estimate', () => {

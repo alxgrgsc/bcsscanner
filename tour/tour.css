@@ -211,3 +211,41 @@
 @media (prefers-reduced-motion: reduce) {
   .t-wrap *, .t-wrap *::before, .t-wrap *::after { animation-duration: 0.01s !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; }
 }
+
+/* ---- Milk recording scenes ---- */
+
+.t-diy { background: var(--t-olive); color: var(--t-cream); font-weight: 400; }
+.t-diy b { font-weight: 600; }
+.t-note-high { bottom: 22%; }
+.t-phone-high { top: 36%; }
+
+.t-clip {
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  width: 18%;
+  aspect-ratio: 3 / 5;
+  transform: translateX(-50%);
+  background: var(--t-brown);
+  border: 3px solid var(--t-oat);
+  border-radius: 8px;
+}
+.t-clip::after { content: ''; position: absolute; left: 50%; bottom: 12%; width: 30%; aspect-ratio: 1; transform: translateX(-50%); border-radius: 50%; background: var(--t-olive); }
+
+.t-type { font-size: 28px; letter-spacing: 2px; animation: t-in 0.3s 0.6s both; }
+.t-keys { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 8px; }
+.t-keys span { text-align: center; padding: 6px 0; border-radius: 6px; background: var(--t-card); font-weight: 600; font-size: 13px; min-height: 28px; }
+.t-keys span:last-child { background: var(--t-olive); color: var(--t-cream); }
+
+.t-flash { position: absolute; inset: 0; background: #fff; animation: t-flash 0.5s 1.4s both; pointer-events: none; }
+@keyframes t-flash { 0% { opacity: 0; } 30% { opacity: 0.85; } 100% { opacity: 0; } }
+
+.t-flag { display: inline-block; margin-top: 8px; padding: 3px 10px; border-radius: 20px; background: var(--t-rust); color: var(--t-cream); font-weight: 600; font-size: 12px; animation: t-in 0.4s 1.2s both; }
+.t-herd span.t-flagged { animation-name: t-fill-flag; }
+@keyframes t-fill-flag { from { background: var(--t-sand); transform: scale(0.8); } to { background: var(--t-rust); transform: none; } }
+
+.t-two { position: absolute; left: 6%; right: 6%; top: 6%; display: grid; gap: 10px; }
+.t-card { background: var(--t-cream); border-radius: 12px; padding: 10px 12px; box-shadow: 0 4px 12px rgba(58, 46, 38, 0.2); animation: t-in 0.5s both; }
+.t-card + .t-card { animation-delay: 0.8s; }
+.t-card p { margin: 3px 0; }
+.t-score-sm { font-size: 28px; }
