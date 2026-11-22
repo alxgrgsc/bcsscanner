@@ -120,7 +120,7 @@ test('targets not yet checked', () => { assert.equal(TARGETS_CHECKED, false); })
 
 Run: `python -m http.server 8000` in the repo, open `http://localhost:8000` at phone width (390 px).
 Expected, every one true:
-- the strip is visible on both views; no "BóScan" anywhere (`grep -ri boscan --exclude-dir=docs .` returns nothing)
+- the strip is visible on both views; no "BóScan" anywhere (the `b.scan` test in tests/scoring.test.js passes)
 - with camera denied: sample cow shows, Score works
 - Score with no tag → "Tag: not entered"
 - five Scores in a row show different results

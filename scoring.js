@@ -38,3 +38,10 @@ export function compareToTarget(score, stageKey) {
 export function formatScore(score) {
   return score.toFixed(2);
 }
+
+// The label beside the score. It always keeps the word "Estimate".
+export function resultLabel(state) {
+  if (state === 'adjusted') return 'Estimate · adjusted by you';
+  if (state === 'agreed') return 'Estimate · agreed by you';
+  return 'Estimate';
+}

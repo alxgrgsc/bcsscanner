@@ -32,3 +32,29 @@ test('format', () => {
 test('targets not yet checked', () => {
   assert.equal(TARGETS_CHECKED, false);
 });
+
+import { resultLabel } from '../scoring.js';
+import { readFileSync, readdirSync, statSync } from 'node:fs';
+import { join } from 'node:path';
+
+test('every label still says estimate', () => {
+  assert.equal(resultLabel('new'), 'Estimate');
+  assert.equal(resultLabel('adjusted'), 'Estimate · adjusted by you');
+  assert.equal(resultLabel('agreed'), 'Estimate · agreed by you');
+});
+
+test('the unagreed name appears nowhere outside docs', () => {
+  const skip = new Set(['docs', '.git', '.superpowers', 'node_modules', 'tests']);
+  const files = [];
+  const walk = (dir) => {
+    for (const name of readdirSync(dir)) {
+      if (skip.has(name)) continue;
+      const p = join(dir, name);
+      if (statSync(p).isDirectory()) walk(p);
+      else files.push(p);
+    }
+  };
+  walk('.');
+  const hits = files.filter((f) => /b.scan/i.test(readFileSync(f, 'utf8')));
+  assert.deepEqual(hits, []);
+});

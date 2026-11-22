@@ -1,5 +1,5 @@
 import { TARGETS, TARGETS_CHECKED } from './targets.js';
-import { pickSampleResult, adjustScore, compareToTarget, formatScore } from './scoring.js';
+import { pickSampleResult, adjustScore, compareToTarget, formatScore, resultLabel } from './scoring.js';
 
 const $ = (id) => document.getElementById(id);
 
@@ -81,14 +81,14 @@ function score() {
     };
     $('scan').hidden = true;
     $('result').hidden = false;
-    showResult('Estimate');
+    showResult(resultLabel('new'));
     window.scrollTo(0, 0);
   }, 1000);
 }
 
 function adjust(delta) {
   current.score = adjustScore(current.score, delta);
-  showResult('Adjusted by you');
+  showResult(resultLabel('adjusted'));
 }
 
 function nextCow() {
@@ -101,7 +101,7 @@ function nextCow() {
 $('score-btn').addEventListener('click', score);
 $('minus-btn').addEventListener('click', () => adjust(-0.25));
 $('plus-btn').addEventListener('click', () => adjust(0.25));
-$('agree-btn').addEventListener('click', () => showResult('Agreed by you'));
+$('agree-btn').addEventListener('click', () => showResult(resultLabel('agreed')));
 $('next-btn').addEventListener('click', nextCow);
 
 startCamera();
