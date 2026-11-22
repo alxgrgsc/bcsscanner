@@ -78,7 +78,7 @@ export const SCENES = [
     caption: '6. Estimate',
     html: phone(`
       <p class="t-small">IE 372 0451 2034</p>
-      <p class="t-score">2.50 <span>Estimate</span></p>
+      <p class="t-score">2.50 <span class="t-lbl">Estimate</span></p>
       <p class="t-under">Below the breeding target (2.75–3.50)</p>
       <ul class="t-areas">
         ${area('Hook bones', '2.50')}
@@ -93,10 +93,10 @@ export const SCENES = [
     html: `
       ${phone(`
         <p class="t-small">IE 372 0451 2034</p>
-        <p class="t-score t-swap">
-          <span class="t-old">2.50 <span>Estimate</span></span>
-          <span class="t-new">2.75 <span>Estimate · adjusted by you</span></span>
-        </p>
+        <div class="t-score t-swap">
+          <div class="t-old">2.50 <span class="t-lbl">Estimate</span></div>
+          <div class="t-new">2.75 <span class="t-lbl">Estimate · adjusted by you</span></div>
+        </div>
         <p class="t-small">The technician has the final say.</p>`)}
       ${note('She feels the pins and tailhead, then nudges the score up a quarter.', 't-fade-in')}`,
   },
@@ -132,7 +132,7 @@ export const SCENES = [
             <li><span>Aoife</span><i style="--w:80%" class="t-bar-in"></i><b>231 cows</b></li>
             <li><span>Pádraig</span><i style="--w:58%" class="t-bar-in"></i><b>168 cows</b></li>
           </ul>
-          <p class="t-under">Farms with the most cows below target: Murphy's, Kellys, Doyle's</p>
+          <p class="t-under">Farms with the most cows below target: Murphy's, Kelly's, Doyle's</p>
         </div>
       </div>
       ${note('The MD sees every visit, across every technician.', 't-fade-in')}`,

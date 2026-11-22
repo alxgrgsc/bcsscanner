@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tour/tour.css">
   <link rel="stylesheet" href="style.css">
   <script type="module" src="app.js"></script>
 </head>
@@ -14,7 +15,13 @@
   <header class="strip">BCS Scanner · Prototype · sample data</header>
 
   <main>
-    <section id="scan">
+    <section id="how">
+      <h1>How it works</h1>
+      <div id="tour"></div>
+      <button id="try-btn" class="primary wide">Try it yourself</button>
+    </section>
+
+    <section id="scan" hidden>
       <div class="frame">
         <video id="camera" playsinline muted autoplay hidden></video>
         <img id="sample-cow" src="assets/sample-cow.svg" alt="Drawing of a cow seen from behind">
