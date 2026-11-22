@@ -106,8 +106,7 @@ export const SCENES = [
         <div class="t-score t-swap">
           <div class="t-old">2.50 <span class="t-lbl">Estimate</span></div>
           <div class="t-new">2.75 <span class="t-lbl">Estimate · adjusted by you</span></div>
-        </div>
-        <p class="t-small">You have the final say.</p>`)}
+        </div>`)}
       ${note('After milking, the farmer checks the flagged cows by eye and hand, and agrees or adjusts.', 't-fade-in')}`,
   },
   {
