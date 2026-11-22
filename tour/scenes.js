@@ -107,7 +107,7 @@ export const SCENES = [
           <div class="t-old">2.50 <span class="t-lbl">Estimate</span></div>
           <div class="t-new">2.75 <span class="t-lbl">Estimate · adjusted by you</span></div>
         </div>`)}
-      ${note('After milking, the farmer checks the flagged cows by eye and hand, and agrees or adjusts.', 't-fade-in')}`,
+      ${note('After milking, the farmer checks the flagged cows and agrees or adjusts.', 't-fade-in')}`,
   },
   {
     caption: '9. Herd report',
