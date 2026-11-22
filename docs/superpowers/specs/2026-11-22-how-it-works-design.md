@@ -31,3 +31,7 @@ on every change).
 ## Revision 22 Nov 2026: milk recording visit
 
 Rory (19:03-19:06) confirmed the technician is a **milk recording** technician: in the parlour during milking, entering each cow number, very little time per cow; many farmers record themselves (DIY). Alex chose to show both who checks flagged cows (technician before leaving, farmer later) and to add "DIY recording" notes where that case differs (scenes 2, 3, 8). New captions: 1 Arrive for milk recording, 2 Set up in the parlour, 3 Cow comes in, 4 The photo takes itself, 5 Scan, 6 Estimate, 7 Next cows, 8 Check the flagged cows, 9 Farm report, 10 Back at the office.
+
+## Revision 22 Nov 2026 (later): farmer first
+
+Alex: "make it farmer first, remove the technician side". The farmer does their own milk recording and is the only person in the walkthrough. No technician, MD or DIY notes (a test enforces it). Captions: 1 Milk recording day, 2 Set up in the parlour, 3 Cow comes in, 4 The photo takes itself, 5 Scan, 6 Estimate, 7 Next cows, 8 Check the flagged cows, 9 Herd report, 10 Over the season.

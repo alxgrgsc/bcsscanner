@@ -1,4 +1,4 @@
-// The "How it works" walkthrough: one milk recording visit, scene by scene.
+// The "How it works" walkthrough: a farmer's own milk recording, scene by scene.
 // Everything shown is sample data. Scenes 1, 7 to 10 are pictures of
 // screens that don't exist in the app yet.
 
@@ -25,20 +25,17 @@ const phone = (inner, cls = '') =>
 
 const note = (text, cls = '') => `<p class="t-note ${cls}">${text}</p>`;
 
-// A second note for farms that record their own milk (no technician).
-const diy = (text) => `<p class="t-note t-diy t-fade-in"><b>DIY recording:</b> ${text}</p>`;
-
 const area = (name, score, cls = '') =>
   `<li class="${cls}"><span>${name}</span><b>${score}</b></li>`;
 
 export const SCENES = [
   {
-    caption: '1. Arrive for milk recording',
+    caption: '1. Milk recording day',
     html: `
       <div class="t-field"></div>
       <div class="t-shed"></div>
       ${phone(`
-        <p class="t-small">Today's milk recording</p>
+        <p class="t-small">Today: milk recording</p>
         <p class="t-big">Maguire's, Co. Cork</p>
         <p>120 cows · evening milking</p>
         <ul class="t-tags">
@@ -52,8 +49,7 @@ export const SCENES = [
       <div class="t-shed-bg"></div>
       ${COW}
       <div class="t-clip t-fade-in"></div>
-      ${note('The meters go on, and the phone is clipped up in the pit, facing the cows from behind.', 't-fade-in t-note-high')}
-      ${diy('the farmer sets up the meters and the phone.')}`,
+      ${note('The farmer puts the meters on and clips the phone up in the pit, facing the cows from behind.', 't-fade-in')}`,
   },
   {
     caption: '3. Cow comes in',
@@ -62,8 +58,7 @@ export const SCENES = [
         <p class="t-small">Milk recording · cow number</p>
         <p class="t-big t-type">2034</p>
         <div class="t-keys">${[1, 2, 3, 4, 5, 6, 7, 8, 9, '', 0, '✓'].map((k) => `<span>${k}</span>`).join('')}</div>`, 't-phone-high')}
-      ${note('The technician types her number for the milk record, as they do now.', 't-fade-in t-note-high')}
-      ${diy('the farmer types the number while milking.')}`,
+      ${note('The farmer types her number for the milk record while milking, as now.', 't-fade-in')}`,
   },
   {
     caption: '4. The photo takes itself',
@@ -101,22 +96,17 @@ export const SCENES = [
   {
     caption: '8. Check the flagged cows',
     html: `
-      <div class="t-two">
-        <div class="t-card">
-          <p class="t-small">Technician, before leaving</p>
-          <p class="t-score t-score-sm">2.75 <span class="t-lbl">Estimate · adjusted by you</span></p>
-          <p class="t-small">Checks cow 2034 by eye and hand.</p>
+      ${phone(`
+        <p class="t-small">Cow 2034 · flagged</p>
+        <div class="t-score t-swap">
+          <div class="t-old">2.50 <span class="t-lbl">Estimate</span></div>
+          <div class="t-new">2.75 <span class="t-lbl">Estimate · adjusted by you</span></div>
         </div>
-        <div class="t-card">
-          <p class="t-small">Farmer, later, from the report</p>
-          <p class="t-score t-score-sm">2.50 <span class="t-lbl">Estimate · agreed by you</span></p>
-          <p class="t-small">Checks the flagged cows at the next milking.</p>
-        </div>
-      </div>
-      ${diy('the farmer does the checking.')}`,
+        <p class="t-small">You have the final say.</p>`)}
+      ${note('After milking, the farmer checks the flagged cows by eye and hand, and agrees or adjusts.', 't-fade-in')}`,
   },
   {
-    caption: '9. Farm report',
+    caption: '9. Herd report',
     html: phone(`
       <p class="t-small">Maguire's, Co. Cork · sample</p>
       <p class="t-big">120 cows scored</p>
@@ -129,19 +119,17 @@ export const SCENES = [
       <p class="t-sent t-pop">Added to the milk recording report ✓</p>`, 't-phone-tall'),
   },
   {
-    caption: '10. Back at the office',
+    caption: '10. Over the season',
     html: `
-      <div class="t-laptop">
-        <div class="t-laptop-screen">
-          <p class="t-small">This week · all technicians · sample</p>
-          <ul class="t-bars">
-            <li><span>Johnny</span><i style="--w:90%" class="t-bar-in"></i><b>9 herds</b></li>
-            <li><span>Stephen</span><i style="--w:80%" class="t-bar-in"></i><b>8 herds</b></li>
-            <li><span>Padraic</span><i style="--w:58%" class="t-bar-in"></i><b>6 herds</b></li>
-          </ul>
-          <p class="t-under">Herds with the most cows below target: Maguire's, Kelly's, Doyle's</p>
-        </div>
-      </div>
-      ${note('The MD sees every herd recorded, across every technician.', 't-fade-in')}`,
+      ${phone(`
+        <p class="t-small">Maguire's, Co. Cork · sample</p>
+        <p class="t-big">Cows below target, each recording</p>
+        <ul class="t-bars">
+          <li><span>March</span><i style="--w:28%" class="t-bar-under"></i><b>34</b></li>
+          <li><span>May</span><i style="--w:21%" class="t-bar-under"></i><b>25</b></li>
+          <li><span>July</span><i style="--w:15%" class="t-bar-under"></i><b>18</b></li>
+          <li><span>September</span><i style="--w:10%" class="t-bar-under"></i><b>12</b></li>
+        </ul>`, 't-phone-tall')}
+      ${note('Every milk recording adds a score, so the farmer sees the herd change over the season.', 't-fade-in')}`,
   },
 ];
