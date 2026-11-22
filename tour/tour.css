@@ -221,7 +221,8 @@
 .t-clip::after { content: ''; position: absolute; left: 50%; bottom: 12%; width: 30%; aspect-ratio: 1; transform: translateX(-50%); border-radius: 50%; background: var(--t-olive); }
 
 .t-input { display: flex; align-items: center; min-height: 44px; margin: 6px 0 4px; padding: 0 10px; border: 2px solid var(--t-sand); border-radius: 8px; background: #fff; font-size: 26px; font-weight: 600; letter-spacing: 2px; }
-.t-digit { animation: t-in 0.05s var(--d) both; }
+.t-digit { display: inline-block; overflow: hidden; max-width: 0; animation: t-reveal 0.01s var(--d) forwards; }
+@keyframes t-reveal { to { max-width: 2em; } }
 .t-caret { width: 2px; height: 26px; margin-left: 2px; background: var(--t-brown); animation: t-blink 0.8s steps(1) infinite; }
 .t-press { animation: t-press 0.25s var(--d) both; }
 @keyframes t-blink { 50% { opacity: 0; } }
