@@ -2,16 +2,17 @@
 // every result is made up, so the app labels it "sample data".
 import { TARGETS } from './targets.js';
 
-export const BODY_AREAS = ['Hook bones', 'Pin bones', 'Tailhead', 'Short ribs', 'Backbone'];
+// The three areas Teagasc scores by hand (Teagasc BCS sheet).
+export const BODY_AREAS = ['Pins and tailhead', 'Loin (short ribs)', 'Ribs'];
 
 // Hand-written samples. Area scores in the same order as BODY_AREAS.
 const SAMPLE_RESULTS = [
-  { score: 2.75, areas: [2.75, 2.5, 3.0, 2.75, 3.0] },
-  { score: 3.25, areas: [3.25, 3.0, 3.5, 3.25, 3.0] },
-  { score: 2.5, areas: [2.25, 2.5, 2.75, 2.5, 2.5] },
-  { score: 3.0, areas: [3.0, 3.0, 3.25, 2.75, 3.0] },
-  { score: 2.0, areas: [2.0, 1.75, 2.25, 2.0, 2.0] },
-  { score: 3.75, areas: [3.75, 3.5, 4.0, 3.75, 3.75] },
+  { score: 2.75, areas: [2.5, 2.75, 3.0] },
+  { score: 3.25, areas: [3.25, 3.0, 3.5] },
+  { score: 2.5, areas: [2.25, 2.5, 2.75] },
+  { score: 3.0, areas: [3.0, 2.75, 3.25] },
+  { score: 2.0, areas: [1.75, 2.0, 2.25] },
+  { score: 3.75, areas: [3.5, 3.75, 4.0] },
 ];
 
 export function pickSampleResult(n) {

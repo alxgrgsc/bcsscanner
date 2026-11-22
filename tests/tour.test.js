@@ -64,3 +64,13 @@ test('scene 3 types 2034: each digit appears when its key is pressed, then ✓',
   const tick = keys.find(([k]) => k === '✓');
   assert.ok(tick && Number(tick[1]) > Math.max(...delays), '✓ pressed last');
 });
+
+import { BODY_AREAS } from '../scoring.js';
+import { TARGETS } from '../targets.js';
+
+test('scene 6 uses the same body areas and breeding band as the app', () => {
+  const html = SCENES[5].html;
+  for (const a of BODY_AREAS) assert.ok(html.includes(a), a);
+  const t = TARGETS.breeding;
+  assert.ok(html.includes(`${t.min.toFixed(2)}–${t.max.toFixed(2)}`), 'breeding band');
+});

@@ -82,13 +82,11 @@ export const SCENES = [
     html: phone(`
       <p class="t-small">Cow 2034</p>
       <p class="t-score">2.50 <span class="t-lbl">Estimate</span></p>
-      <p class="t-under">Below target (2.75–3.50)</p>
+      <p class="t-under">Below the breeding target (2.75–3.25)</p>
       <ul class="t-areas">
-        ${area('Hook bones', '2.50')}
-        ${area('Pin bones', '2.25', 't-thin')}
-        ${area('Tailhead', '2.75')}
-        ${area('Short ribs', '2.50')}
-        ${area('Backbone', '2.50')}
+        ${area('Pins and tailhead', '2.25', 't-thin')}
+        ${area('Loin (short ribs)', '2.50')}
+        ${area('Ribs', '2.75')}
       </ul>
       <p class="t-flag">Flagged to check</p>`, 't-phone-tall'),
   },
