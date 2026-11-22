@@ -96,7 +96,7 @@ export const SCENES = [
       <div class="t-herd">
         ${Array.from({ length: 24 }, (_, i) => `<span class="${[4, 11, 17].includes(i) ? 't-flagged' : ''}" style="--d:${(i * 0.09).toFixed(2)}s"></span>`).join('')}
       </div>
-      ${note('The whole herd, a few seconds each. 120 of 120 scored during milking.', 't-fade-in')}`,
+      ${note('The whole herd scored during milking.', 't-fade-in')}`,
   },
   {
     caption: '8. Check the flagged cows',
